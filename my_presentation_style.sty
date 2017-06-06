@@ -1,0 +1,176 @@
+\usepackage[utf8]{inputenc}
+\usepackage{multimedia}
+\usepackage{pgfpages}
+
+\setbeamercovered{transparent}
+
+\newif\ifuseblue
+% for blue theme, this should be
+%     \usebluetrue%
+% for the white theme, this should be
+	\usebluefalse
+
+%\setbeameroption{show notes}
+%\setbeameroption{show only notes}
+\setbeameroption{hide notes}
+%\setbeameroption{show notes on second screen=left} % Location can be left, top or bottom
+
+\usetheme[pageofpages=of,		% String used between the current page and the total page count.
+	bullet=circle,				% Use circles instead of squares for bullets.
+	titleline=true,				% Show a line below the frame title.
+	showdate=true,				% show the date on the title page
+	alternativetitlepage=true,		% Use the fancy title page.
+  titlepagelogo=kth_logo,		% Logo for the first page.
+	% Logo for the header on first page.
+	\ifuseblue
+		% headerlogo=??, % Logo for blue background.
+	\else
+		 %headerlogo=access_kth_cmyk, % Logo for white background.
+    headerlogo=phantom_pic,
+	\fi
+	% watermark=watermark,		% Watermark used in every page.
+	% watermarkheight=50pt,		% Height of the watermark.
+	% watermarkheightmult=6,	% The watermark image is 6 times bigger than watermarkheight.
+	]{KTH}
+
+\ifuseblue
+	 \usecolortheme{kthblue}
+\else
+	 \usecolortheme{kthwhite}
+\fi
+
+% More space on itemize
+\newenvironment{wideitemize}{\itemize\addtolength{\itemsep}{5pt}}{\enditemize}
+
+% Math packages
+\usepackage{mathrsfs}
+\usepackage{amsmath}
+\usepackage{bm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{amsthm}
+\usepackage{commath}
+\usepackage{lipsum}
+\usepackage[many]{tcolorbox}
+
+\usepackage{mathtools}
+\mathtoolsset{showonlyrefs}
+
+\usepackage{appendixnumberbeamer}
+
+\usepackage[absolute,overlay]{textpos}
+\setlength{\TPHorizModule}{1mm}
+\setlength{\TPVertModule}{1mm}
+
+\usepackage{tikz}
+\usepackage{tkz-graph}
+%\usetikzlibrary{arrows, shapes}
+\usetikzlibrary{calc,positioning,shapes,shadows,arrows,fit}
+\newcommand{\mymkellipse}[1]{%
+  \tikz[baseline=(char.base)]\node[anchor=south west, draw,ellipse,rounded corners,inner sep=1pt, color=red
+  ](char){\ensuremath{#1}} ;}
+\newcommand{\mymkbox}[1]{%
+  \tikz[baseline=(char.base)]\node[anchor=south west, draw, rectangle ,rounded corners,inner sep=1pt, color=red
+  ](char){\ensuremath{#1}} ;}
+
+\usepackage{flushend}
+\usepackage{psfrag}
+\usepackage{pgfplots}
+\usepackage{todonotes}
+\usetikzlibrary{external,calc,patterns,decorations.pathmorphing,decorations.markings}
+\usetikzlibrary{external}
+%\tikzset{external/system call={xelatex -shell-escape \tikzexternalcheckshellescape -halt-on-error -interaction=batchmode -jobname "\image" "\texsource"}}
+%\tikzexternalize[prefix=tikzfigures/, mode=list and make]
+%\tikzexternalize[prefix=tikzfigures/]
+%\usepackage[pdftex,final]{graphicx}
+\usepackage{graphicx}
+\usepackage{blockdiagram}
+\usepackage{textcomp}
+
+\usepackage[absolute,overlay]{textpos}
+
+% Other packages
+\usepackage{color}
+
+\def\limsup{\mathop{\bar{\lim}}}
+\def\comment#1{$<<${\bf #1}$>>$}
+\def\floor#1{\left\lfloor#1\right\rfloor}
+\newcommand{\ceil}[1]{\left\lceil #1 \right\rceil}
+\DeclareMathOperator*{\argmin}{argmin}
+\DeclareMathOperator*{\argmax}{argmax}
+\DeclareMathOperator*{\diag}{diag}
+\DeclareMathOperator*{\Erf}{Erf}
+\DeclareMathOperator*{\Erfinv}{Erfinv}
+\DeclareMathOperator*{\E}{E}
+\DeclareMathOperator*{\Var}{Var}
+\DeclareMathOperator*{\Std}{Std}
+\DeclareMathOperator*{\VaR}{VaR}
+\DeclareMathOperator*{\dom}{dom}
+\DeclareMathOperator*{\dist}{dist}
+\DeclareMathOperator*{\sgn}{sgn}
+\DeclareMathOperator*{\spec}{spec}
+
+
+\newtheorem{remark}{Remark}
+%\newtheorem{definition}{Definition}[chapter]
+\newtheorem{claim}{Claim}
+\newtheorem{conjecture}{Conjecture}
+\newtheorem{proposition}{Proposition}
+\newtheorem{assumption}{Assumption}
+\newtheorem{simulation}{Simulation}%[section]
+\newtheorem{proofsketch}{Proof sketch}
+\newtheorem{objective}{Objective}
+
+
+% Other packages
+\usepackage{color}
+\usepackage{bibentry}
+%\nobibliography*
+%\bibliographystyle{apalike}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+
+
+\newlength\fheight
+\newlength\fwidth
+
+\newcommand{\mat}[1]{\bm{\mathit{#1}}}
+\newcommand{\vect}[1]{\bm{\mathbf{#1}}}
+
+
+% Boxes
+\usepackage{environ}
+\NewEnviron{gg_box}{%
+  \begin{tcolorbox}[colback=black!5, colframe=white!80!, breakable]
+  %\begin{tcolorbox}[colback=white!10, colframe=black!30!, breakable]
+    \BODY
+  \end{tcolorbox}
+}
+
+\NewEnviron{bw_box}{%
+  \begin{tcolorbox}[colback=white!10, colframe=black!80!, arc=0pt,outer arc=0pt, breakable]
+    \BODY
+  \end{tcolorbox}
+}
+
+\NewEnviron{gw_box}{%
+  \begin{tcolorbox}[colback=white!10, colframe=black!10!, breakable]
+    \BODY
+  \end{tcolorbox}
+}
+
+\NewEnviron{bg_box}{%
+  \begin{tcolorbox}[colback=black!10, colframe=black!80!, arc=0pt,outer arc=0pt, breakable]
+    \BODY
+  \end{tcolorbox}
+}
+
+\NewEnviron{ww_box}{%
+  \begin{tcolorbox}[colback=black!0, colframe=black!0!, arc=0pt,outer arc=0pt, breakable]
+    \BODY
+  \end{tcolorbox}
+}
+
+
+\usepackage[makeroom]{cancel}

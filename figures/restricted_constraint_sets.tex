@@ -1,0 +1,13 @@
+\begin{tikzpicture}[scale = 1, rotate=-30]
+  \draw (2,2) ellipse (6cm and 3cm);
+    \node at ($(2.5,2.5)+(75:6 and 3)$) {$\mathcal{E}_i$};
+  \draw[dashed] (2,2) ellipse (5cm and 2.5cm);
+    \node at ($(-2.3,1.2)+(75:5 and 2.5)$) {$\mathcal{E}_i \ominus \mathcal{B}_{i,t_{k+1} - t_k}$};
+  \draw[dashed] (2,2) ellipse (2cm and 1cm);
+    \node at ($(1.2,1.2)+(75:2 and 1)$) {$\mathcal{E}_i \ominus \mathcal{B}_{i,t_k + T_p - t_k}$};
+
+  \node at (5.5,2) {$\dots$};
+  \node at (-1.5,2) {$\dots$};
+
+\pgflowlevel{\pgftransformrotate{30}}
+\end{tikzpicture}

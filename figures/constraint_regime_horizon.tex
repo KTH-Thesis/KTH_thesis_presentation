@@ -1,0 +1,29 @@
+\begin{tikzpicture}[scale = 0.5]
+
+  \draw[dashed] (0,0) -- (10,0);
+
+  \node at (-2, 2) {Agent $i$};
+  \node at (-2, -2) {Agent $j$};
+
+  \filldraw[fill=blue!10!white, draw=black](2,2) circle (1cm);
+  \filldraw[fill=blue!10!white, draw=black](2,-2) circle (1cm);
+  \node at (2, -4) {$t_k$};
+
+
+  \filldraw[fill=yellow!10!white, draw=black,dashed] (5,2) circle (1cm);
+  \filldraw[fill=yellow!10!white, draw=black,dashed] (5,-2) circle (1cm);
+  \node at (5, -4) {$t_{k+1}$};
+
+  \filldraw[fill=green!10!white, draw=black,dashed] (8.5, 2.5) circle (1cm);
+  \filldraw[fill=green!10!white, draw=black,dashed] (8,-2) circle (1cm);
+  \node at (8, -4) {$t_{k+2}$};
+
+  \node at (12, 0) {$\dots$};
+
+  \draw[dashed] (14,0) -- (19,0);
+
+  \filldraw[fill=red!10!white, draw=black,dashed] (16, 1.5) circle (1cm);
+  \filldraw[fill=red!10!white, draw=black,dashed] (17,-1.5) circle (1cm);
+  \node at (16.5, -4) {$t_k + T_p$};
+
+\end{tikzpicture}

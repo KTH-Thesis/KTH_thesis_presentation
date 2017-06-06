@@ -1,0 +1,46 @@
+% Copyright 2007 by Marco Barisione
+% Copyright 2011 by Henricus Bouwmeester
+%
+% This file may be distributed and/or modified
+%
+% 1. under the LaTeX Project Public License and/or
+% 2. under the GNU Public License.
+
+\DeclareOptionBeamer{shadow}[true]{\def\beamer@themerounded@shadow{#1}}
+\ExecuteOptionsBeamer{shadow=false}
+\ProcessOptionsBeamer
+
+\mode<presentation>
+
+\definecolor{KTHBlue}{RGB}{25,84,166}
+\definecolor{KTHGray}{RGB}{128,128,128}
+\definecolor{KTHYellow}{RGB}{227,220,192}
+\definecolor{KTHred}{RGB}{157,16,45}
+
+\setbeamercolor*{palette primary}{fg=white,bg=KTHYellow}
+\setbeamercolor*{palette secondary}{fg=white,bg=KTHGray}
+\setbeamercolor*{palette tertiary}{fg=white,bg=KTHGray}
+\setbeamercolor*{palette quaternary}{fg=white,bg=KTHBlue}
+\setbeamercolor*{palette quinary}{fg=white,bg=KTHBlue}
+\setbeamercolor*{palette senary}{fg=KTHBlue,bg=white}
+
+\setbeamercolor*{frametitle}{bg=KTHBlue,fg=white}
+\setbeamercolor*{part title}{bg=white,fg=KTHYellow}
+\setbeamercolor*{item}{fg=KTHBlue}
+
+\setbeamercolor*{separation line}{}
+\setbeamercolor*{fine separation line}{}
+
+\setbeamercolor*{structure}{fg=KTHBlue}
+
+\setbeamercolor{block title}{use=structure,fg=structure.fg,bg=structure.fg!20!bg}
+\setbeamercolor{block title alerted}{use=alerted text,fg=alerted text.fg,bg=alerted text.fg!20!bg}
+\setbeamercolor{block title example}{use=example text,fg=example text.fg,bg=example text.fg!20!bg}
+\setbeamercolor{block body}{parent=normal text,use=block title,bg=block title.bg!50!bg}
+\setbeamercolor{block body alerted}{parent=normal text,use=block title alerted,bg=block title alerted.bg!50!bg}
+\setbeamercolor{block body example}{parent=normal text,use=block title example,bg=block title example.bg!50!bg}
+
+\setbeamertemplate{blocks}[rounded][shadow=\beamer@themerounded@shadow]
+
+\mode
+<all>
